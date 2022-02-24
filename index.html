@@ -1,0 +1,362 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>成都大学教务处信息系统</title>
+		<link rel="stylesheet" type="text/css" href="zhuye.css"/>
+		<style type="text/css">
+			#remind{
+				margin-left:25px ;
+				position: absolute;
+				padding: 1px 10px;
+				background-color: orange;
+				color: white;
+			}
+		</style>
+	</head>
+	<body>
+		<table align="center" border="0" cellspacing="0" width="1505px">
+			<tr class="">
+				<td class="" align="center" colspan="10"><img src="3.png" width="100%"></td>
+			</tr>
+		</table>
+		<div id="remind">
+			<p>提醒：最好用</p>
+			<p>	Goodle打开！</p>
+		</div>
+		<div class="box">
+			<div class="box1">
+				<ul id="meau">
+					<li><a href="index.html">首&nbsp &nbsp &nbsp &nbsp页</a>
+						<ul>
+							<li><a href="9.html" target="_blank">自我介绍</a></li>
+							<li><a href="10.html" target="_blank">项目难点</a></li>
+						</ul>
+					</li>
+					<li><a href="">机构设置</a></li>
+					<li><a href="">管理文件</a>
+						<ul>
+							<li><a href="">教学建设</a></li>
+							<li><a href="">综合管理</a></li>
+							<li><a href="">质量评估</a></li>
+							<li><a href="">实践教学</a></li>
+							<li><a href="">招生考试</a></li>
+							<li><a href="">教学运行</a></li>
+							<li><a href="">学籍学位</a></li>
+							<li><a href="">教材工作</a></li>
+						</ul>
+					</li>
+					<li><a href="">办事流程</a>
+						<ul>
+							<li><a href="">教学建设</a></li>
+							<li><a href="">综合管理</a></li>
+							<li><a href="">质量评估</a></li>
+							<li><a href="">实践教学</a></li>
+							<li><a href="">招生考试</a></li>
+							<li><a href="">教学运行</a></li>
+							<li><a href="">学籍学位</a></li>
+							<li><a href="">教材管理</a></li>
+						</ul>
+					</li>
+					<li><a href="">资料下载</a>
+						<ul>
+							<li><a href="">常用表格</a></li>
+							<li><a href="">常用工具</a></li>
+							<li><a href="">教学大纲</a></li>
+						</ul>
+					</li>
+					<li><a href="">招生咨询</a></li>
+					<li><a href="">本科教学</a>
+						<ul>
+							<li><a href="">项目展示</a></li>
+						</ul>
+					</li>
+					<li><a href="">学科竞赛</a>
+						<ul>
+							<li><a href="">通知新闻</a></li>
+							<li><a href="">成果展示</a></li>
+						</ul>
+					</li>
+					<li><a href="">平台建设</a>
+						<ul>
+							<li><a href="">平台快讯</a></li>
+						</ul>
+					</li>
+					<li><a href="">学校主页</a></li>
+				</ul>
+			</div>
+			<br>
+			<div class="slideshow">
+				<ul class="list" id="list">
+					<li class="li active" ><a href="2.html"
+					 target="_blank"><img src="10.jpg" width="1150px"></a></li>
+					<li class="li" ><a href=""><img src="11.jpg" width="1150px"></a></li>
+					<li class="li" ><a href=""><img src="12.jpg" width="1150px"></a></li>
+					<li class="li" ><a href=""><img src="13.jpg" width="1150px"></a></li>
+					<li class="li" ><a href="3.html" 
+					target="_blank"><img src="14.jpg" width="1150px"></a></li>
+				</ul>
+				<button class="btn" id="btnpre" onclick="goindexpre()"> &lt </button>
+				<button class="btn" id="btnnext" onclick="goindexnext()"> &gt </button>
+				<ul class="pointlist">
+					<li class="point active" data-index='0'></li>
+					<li class="point" data-index='1'></li>
+					<li class="point" data-index='2'></li>
+					<li class="point" data-index='3'></li>
+					<li class="point" data-index='4'></li>
+				</ul>
+				<script type="text/javascript">
+					var lists=document.getElementsByClassName("li");
+					var points=document.getElementsByClassName("point");
+					var index=0;
+					window.setInterval("goindexnext()", 2000);
+					function goindex(){
+						for(var i=0;i<lists.length;i++){
+							lists[i].className='li';
+							points[i].className='point';
+						}
+						lists[index].className='li active';
+						points[index].className='point active';
+					}
+					function goindexnext() {
+						index=(index+1)%(lists.length);
+						goindex();
+					}
+					function goindexpre() {
+						index--;
+						if(index<0){
+							index=(index+lists.length)%(lists.length);
+						}
+						goindex();
+					}
+					for(var i=0;i<points.length;i++){
+						points[i].addEventListener('click',function(){
+							index=this.getAttribute('data-index');
+							goindex();
+						})
+					}
+				</script>
+			</div>
+			<div class="time">
+				<span><input type="image" src="1.png" /></span>
+				<span id="time"></span>
+				<script type="text/javascript">
+					function time(){
+						var now=new Date();
+						var week;
+						var hour=now.getHours();
+						var min=now.getMinutes();
+						var sec=now.getSeconds();
+						switch (now.getDay()){
+							case 0:week="星期日";break;
+							case 1:week="星期一";break;
+							case 2:week="星期二";break;
+							case 3:week="星期三";break;
+							case 4:week="星期四";break;
+							case 5:week="星期五";break;
+							case 6:week="星期六";break;
+						}
+						if(now.getHours()<10){
+							hour="0"+now.getHours();
+						}
+						if(now.getMinutes()<10){
+							min="0"+now.getMinutes();
+						}
+						if(now.getSeconds()<10){
+							sec="0"+now.getSeconds();
+						}
+						var str=now.getFullYear()+" 年 "+(now.getMonth()+1)+" 月 "+now.getDate()+" 日 "+" "+week
+								+" "+hour+":"+min+":"+sec;
+						var span1 = document.getElementById("time");
+						span1.innerHTML = str;
+					}
+					time();
+					window.setInterval("time()", 1000);
+				</script>
+			</div>
+			<hr ><br>
+			<div class="box2">
+				<div class="daytable">
+					<table border="0" cellspacing="" cellpadding="" width="290px">
+						<tr align="center">
+							<td class="today"><span id="today">今天</span><span>为第</span><span id="number">16</span><span>个教学周</span></td>
+						</tr>
+					<table class="table2" border="1" cellspacing="" cellpadding="" width="290px" height="250px">
+						<tr class="year" align="center">
+							<td colspan="7"><span>2019年12月</span></td>
+						</tr>
+						<tr class="week" align="center">
+							<td>一</td>
+							<td>二</td>
+							<td>三</td>
+							<td>四</td>
+							<td>五</td>
+							<td clas="weeken">六</td>
+							<td clas="weeken">日</td>
+						</tr>
+						<tr class="day" align="center">
+							<td class="other">25</td>
+							<td class="other">26</td>
+							<td class="other">27</td>
+							<td class="other">28</td>
+							<td class="other">29</td>
+							<td class="other weeken">30</td>
+							<td class="weeken">1</td>
+						</tr>
+						<tr class="day" align="center">
+							<td>2</td>
+							<td>3</td>
+							<td>4</td>
+							<td>5</td>
+							<td>6</td>
+							<td class="weeken">7</td>
+							<td class="weeken">8</td>
+						</tr>
+						<tr class="day" align="center">
+							<td>9</td>
+							<td>10</td>
+							<td>11</td>
+							<td>12</td>
+							<td>13</td>
+							<td class="weeken">14</td>
+							<td class="weeken">15</td>
+						</tr>
+						<tr class="day" align="center">
+							<td>16</td>
+							<td>17</td>
+							<td>18</td>
+							<td>19</td>
+							<td>20</td>
+							<td class="now weeken">21</td>
+							<td class="weeken">22</td>
+						</tr>
+						<tr class="day" align="center">
+							<td>23</td>
+							<td>24</td>
+							<td>25</td>
+							<td>26</td>
+							<td>27</td>
+							<td class="weeken">28</td>
+							<td class="weeken">29</td>
+						</tr>
+						<tr class="day" align="center">
+							<td>30</td>
+							<td>31</td>
+							<td class="other">1</td>
+							<td class="other">2</td>
+							<td class="other">3</td>
+							<td class="other weeken">4</td>
+							<td class="other weeken">5</td>
+						</tr>
+					</table>
+				</div>
+			<div class="notification">
+				<table border="0" cellspacing="" cellpadding="" width="735px">
+					<tr>
+						<td align="left" id="tongzi">通知通告</td>
+						<td align="right" id="more"><a href="">更多</a></td>
+					</tr>
+				</table>
+				<hr >
+				<table border="0" cellspacing="" cellpadding="" width="735px" height="240px">
+					<tr>
+						<td><div class="notice"><img src="5.gif" >&nbsp <a href="4.html" target="_blank">关于组织开展2019—2020学年第一学期学院评价及网络教学平台建设评价的通知</a></div></td>
+						<td class="dataday" align="right">2019-12-13</td>
+					</tr>
+					<tr>
+						<td><div class="notice"><img src="5.gif" >&nbsp <a href="5.html" target="_blank">关于试用中国知网大学生毕业设计（论文）管理系统的通知</a></div></td>
+						<td class="dataday" align="right">2019-12-13</td>
+					</tr>
+					<tr>
+						<td><div class="notice"><img src="5.gif" >&nbsp <a href="">关于举行2019年冬季CET4/CET6考务及监考培训的通知</a></div></td>
+						<td class="dataday" align="right">2019-12-10</td>
+					</tr>
+					<tr>
+						<td><div class="notice"><img src="5.gif" >&nbsp <a href="">成都大学关于第四批省级创新创业教育示范课程拟推荐名单的公示</a></div></td>
+						<td class="dataday" align="right">2019-12-06</td>
+					</tr>
+					<tr>
+						<td><div class="notice"><img src="5.gif" >&nbsp <a href="">关于征集2020级人才培养方案通识课程与学科平台课程设置建议的通知</a></div></td>
+						<td class="dataday" align="right">2019-12-05</td>
+					</tr>
+					<tr>
+						<td><div class="notice"><img src="5.gif" >&nbsp <a href="">关于做好2019级学生转专业工作的通知</a></div></td>
+						<td class="dataday" align="right">2019-12-05</td>
+					</tr>
+					<tr>
+						<td><div class="notice"><img src="5.gif" >&nbsp <a href="">关于办理2019年创新创业学分申请认定的通知</a></div></td>
+						<td class="dataday" align="right">2019-12-04</td>
+					</tr>
+					<tr>
+						<td><div class="notice"><img src="5.gif" >&nbsp <a href="">关于公布成都大学第一届“课程思政”教学设计大赛结果的通知</a></div></td>
+						<td class="dataday" align="right">2019-12-04</td>
+					</tr>
+				</table>
+			</div>
+			</div>
+			<br><br>
+			<div clsaa="box3">
+				<div class="news">
+					<table border="0" cellspacing="" cellpadding="" width="635px">
+						<tr>
+							<td align="left" id="tongzi">教务快讯</td>
+							<td align="right" id="more"><a href="">更多</a></td>
+						</tr>
+					</table>
+					<hr >
+					<table border="0" cellspacing="" cellpadding="" width="635px" height="290px">
+						<tr>
+							<td align="left"><div class="notice"><img src="2.gif" >&nbsp &nbsp <a href="6.html" target="_blank">学校召开临床医学专业认证工作推进会</a></div></td>
+							<td class="dataday" align="right">2019-12-10</td>
+						</tr>
+						<tr>
+							<td><div class="notice"><img src="2.gif" >&nbsp &nbsp <a href="">学校组织开展临床医学专业认证前期考察预演</a></div></td>
+							<td class="dataday" align="right">2019-12-06</td>
+						</tr>
+						<tr>
+							<td><div class="notice"><img src="2.gif" >&nbsp &nbsp <a href="">学校召开师范专业认证工作推进会</a></div></td>
+							<td class="dataday" align="right">2019-12-05</td>
+						</tr>
+						<tr>
+							<td><div class="notice"><img src="2.gif" >&nbsp &nbsp <a href="">成都大学组织开展第一届“课程思政”教学设计大赛</a></div></td>
+							<td class="dataday" align="right">2019-12-05</td>
+						</tr>
+						<tr>
+							<td><div class="notice"><img src="2.gif" >&nbsp &nbsp <a href="">教务处组织召开教师教学信息化能力培训会</a></div></td>
+							<td class="dataday" align="right">2019-11-28</td></tr>
+						<tr>
+							<td><div class="notice"><img src="2.gif" >&nbsp &nbsp <a href="">我校参加实验教学“金课”建设研讨会</a></div></td>
+							<td class="dataday" align="right">2019-11-28</td>
+						</tr>
+					</table>
+				</div>
+				<div class="students">
+					<table class="stutab" border="" cellspacing="" cellpadding="" width="465px" height="320px">
+						<tr class="col1" align="center">
+							<td><a class="ss" href="7.html" target="_blank">教务管理系统</a></td>
+							<td><a class="ss" href="">处&nbsp长&nbsp信&nbsp箱</a></td>
+						</tr>
+						<tr class="col2" align="center">
+							<td><a class="ss" href="">网络教学平台</a></td>
+							<td><a class="ss" href="">网络在线课程</a></td>
+						</tr>
+						<tr class="col3" align="center">
+							<td><a class="ss" href="">成&nbsp大&nbsp校&nbsp历</a></td>
+							<td><a class="ss" href="">作&nbsp息&nbsp时&nbsp间</a></td>
+						</tr>
+						<tr class="col4" align="center">
+							<td><a class="ss" href="8.html" target="_blank">本科教学审核评估</a></td>
+							<td><a class="ss" href="">卓越教育培养计划</a></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			<hr>
+		</div>
+		
+		<table class="" align="center" border="0" cellspacing="0" width="1505px">			
+			<tr>
+				<td align="center" colspan="10"><img src="4.png" width="100%"></td>
+			</tr>
+		</table>
+	</body>
+</html>

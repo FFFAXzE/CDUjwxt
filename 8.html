@@ -1,0 +1,204 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>本科教学审核评估</title>
+		<link rel="stylesheet" type="text/css" href="zhuye.css"/>
+	</head>
+	<body>
+		<table align="center" border="0" cellspacing="0" width="1505px">
+			<tr class="">
+				<td class="" align="center" colspan="10"><img src="15.png" width="100%"></td>
+			</tr>
+		</table>
+		<div class="box">
+			<div class="box1">
+				<ul id="meau">
+					<li><a href="">教务处首页</a></li>
+					<li><a href="">本站首页</a></li>
+					<li><a href="">通知通告</a></li>
+					<li><a href="">组织机构</a></li>
+					<li><a href="">评建动态</a></li>
+					<li><a href="">招生咨询</a></li>
+					<li><a href="">政策文件</a></li>
+					<li><a href="">学校自评</a></li>
+					<li><a href="">评建问答</a></li>
+					<li><a href="">他山之石</a></li>
+				</ul>
+			</div>
+			<br>
+			<br>
+			<div >
+				<div class="slideshow1">
+					<ul class="list1" id="list1">
+						<li class="li1 active" ><a href=""><img src="20.jpg" width="435px"></a></li>
+						<li class="li1" ><a href=""><img src="21.jpg" width="435px"></a></li>
+						<li class="li1" ><a href=""><img src="22.jpg" width="435px"></a></li>
+						<li class="li1" ><a href=""><img src="23.jpg" width="435px"></a></li>
+					</ul>
+					<button class="btn1" id="btnpre1" onclick="goindexpre1()"> &lt </button>
+					<button class="btn1" id="btnnext1" onclick="goindexnext1()"> &gt </button>
+					<ul class="pointlist1">
+						<li class="point1 active" data-index='0'></li>
+						<li class="point1" data-index='1'></li>
+						<li class="point1" data-index='2'></li>
+						<li class="point1" data-index='3'></li>
+					</ul>
+					<script type="text/javascript">
+						var lists=document.getElementsByClassName("li1");
+						var points=document.getElementsByClassName("point1");
+						var index=0;
+						function goindex(){
+							for(var i=0;i<lists.length;i++){
+								lists[i].className='li1';
+								points[i].className='point1';
+							}
+							lists[index].className='li1 active';
+							points[index].className='point1 active';
+						}
+						function goindexnext1() {
+							index=(index+1)%(lists.length);
+							goindex();
+						}
+						function goindexpre1() {
+							index--;
+							if(index<0){
+								index=(index+lists.length)%(lists.length);
+							}
+							goindex();
+						}
+						for(var i=0;i<points.length;i++){
+							points[i].addEventListener('click',function(){
+								index=this.getAttribute('data-index');
+								goindex();
+							})
+						}
+					</script>
+				</div>
+				<div class="notification1">
+					<br>
+					<table border="0" cellspacing="" cellpadding="" width="665px">
+						<tr>
+							<td align="left" id="tongzi">通知通告</td>
+							<td align="right" id="more"><a href="">更多</a></td>
+						</tr>
+					</table>
+					<hr >
+					<table border="0" cellspacing="" cellpadding="" width="665px" height="240px">
+						<tr>
+							<td><div class="notice"><img src="5.gif" >&nbsp <a href="">关于做好本科教学审核评估整改工作的通知</a></div></td>
+							<td class="dataday" align="right">2019-12-13</td>
+						</tr>
+						<tr>
+							<td><div class="notice"><img src="5.gif" >&nbsp <a href="">关于本科教学审核评估专项整改检查—教学材料大检查工作方案的通知</a></div></td>
+							<td class="dataday" align="right">2019-12-13</td>
+						</tr>
+						<tr>
+							<td><div class="notice"><img src="5.gif" >&nbsp <a href="">关于提交本科教学工作审核评估整改方案的通知</a></div></td>
+							<td class="dataday" align="right">2019-12-10</td>
+						</tr>
+						<tr>
+							<td><div class="notice"><img src="5.gif" >&nbsp <a href="">关于召开本科教学工作审核评估专家组反馈会的通知</a></div></td>
+							<td class="dataday" align="right">2019-12-06</td>
+						</tr>
+						<tr>
+							<td><div class="notice"><img src="5.gif" >&nbsp <a href="">关于报送本科教学工作审核评估推进计划的通知</a></div></td>
+							<td class="dataday" align="right">2019-12-05</td>
+						</tr>
+						<tr>
+							<td><div class="notice"><img src="5.gif" >&nbsp <a href="">关于开展本科教学工作审核评估学院专项检查的通知</a></div></td>
+							<td class="dataday" align="right">2019-12-05</td>
+						</tr>
+						<tr>
+							<td><div class="notice"><img src="5.gif" >&nbsp <a href="">关于召开本科教学工作审核评估迎评动员会的通知</a></div></td>
+							<td class="dataday" align="right">2019-12-04</td>
+						</tr>
+						<tr>
+							<td><div class="notice"><img src="5.gif" >&nbsp <a href="">关于开展各二级单位汇报PPT整改的通知</a></div></td>
+							<td class="dataday" align="right">2019-12-04</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			<br>
+			<hr >
+			<br>
+			<div class="box6">
+				<div class="news1">
+					<table border="0" cellspacing="" cellpadding="" width="570px">
+						<tr>
+							<td align="left" id="tongzi">工作状态</td>
+							<td align="right" id="more"><a href="">更多</a></td>
+						</tr>
+					</table>
+					<hr width="570px" align="left">
+					<table border="0" cellspacing="" cellpadding="" width="570px" height="250px">
+						<tr>
+							<td align="left"><div class="notice"><img src="2.gif" >&nbsp &nbsp <a href="">学校组织开展本科教学工作审核评估专家见面会实战演练</a></div></td>
+							<td class="dataday" align="right">2019-04-04</td>
+						</tr>
+						<tr>
+							<td><div class="notice"><img src="2.gif" >&nbsp &nbsp <a href="">学校组织召开本科教学工作审核评估第二十六次周例会</a></div></td>
+							<td class="dataday" align="right">2019-04-03</td>
+						</tr>
+						<tr>
+							<td><div class="notice"><img src="2.gif" >&nbsp &nbsp <a href="">学校组织召开本科教学工作审核评估第二十五次周例会</a></div></td>
+							<td class="dataday" align="right">2019-03-29</td>
+						</tr>
+						<tr>
+							<td><div class="notice"><img src="2.gif" >&nbsp &nbsp <a href="">学校召开本科教学工作审核评估学院PPT汇报会</a></div></td>
+							<td class="dataday" align="right">2019-03-12</td>
+						</tr>
+						<tr>
+							<td><div class="notice"><img src="2.gif" >&nbsp &nbsp <a href="">学校召开审核评估迎评专项工作部署会</a></div></td>
+							<td class="dataday" align="right">2019-02-28</td>
+						</tr>
+					</table>
+				</div>
+				<div class="news2">
+					<table border="0" cellspacing="" cellpadding="" width="540px" height="">
+						<tr>
+							<td align="left" id="tongzi">政策文件</td>
+							<td align="right" id="more"><a href="">更多</a></td>
+						</tr>
+					</table>
+					<hr width="540px" align="left">
+					<table border="0" cellspacing="" cellpadding="" width="540px" height="250px">
+						<tr>
+							<td><div class="notice"><img src="2.gif" >&nbsp &nbsp <a href="">四川省教育厅关于开展地方普通高等学校本科教学工作...</a></div></td>
+							<td class="dataday" align="right">2018-05-23</td>
+						</tr>
+						<tr>
+							<td><div class="notice"><img src="2.gif" >&nbsp &nbsp <a href="">成都大学自评报告指标体系任务分解一览表</a></div></td>
+							<td class="dataday" align="right">2018-04-12</td>
+						</tr>
+						<tr>
+							<td><div class="notice"><img src="2.gif" >&nbsp &nbsp <a href="">成都大学本科教学审核评估工作方案</a></div></td>
+							<td class="dataday" align="right">2018-04-12</td>
+						</tr>
+						<tr>
+							<td><div class="notice"><img src="2.gif" >&nbsp &nbsp <a href="">教育部关于普通高等学校本科教学评估工作的意见</a></div></td>
+							<td class="dataday" align="right">2018-04-10</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			<br>
+			<div class="students1">
+				<table class="stutab1" align="center" border="" cellspacing="" cellpadding="" width="1100px"  height="70px">
+					<tr align="center">
+						<td class="col11"><a class="ss1" href="">&nbsp &nbsp中华人民共和国教育部&nbsp &nbsp </a></td>
+						<td class="col21"><a class="ss1" href="">教育部高等教育教学评估中心</a></td>
+						<td class="col31"><a class="ss1" href="">四川省教育厅、四川教育网</a></td>
+						<td class="col41"><a class="ss1" href=""> &nbsp &nbsp成&nbsp &nbsp &nbsp &nbsp都&nbsp &nbsp &nbsp &nbsp大&nbsp &nbsp &nbsp &nbsp学&nbsp &nbsp </a></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<br>
+		<table class="" align="center" border="0" cellspacing="0" width="1505px">			
+					<tr>
+						<td align="center" colspan="10"><img src="16.png" width="100%"></td>
+					</tr>
+		</table>
+	</body>
+</html>
